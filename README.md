@@ -77,7 +77,7 @@ Git (for cloning repo)
 Clone the repository
 
 git clone https://github.com/mohdsuhel786/reward-points.git
-cd rewards
+cd cd reward-points
 
 Build and Run
 
@@ -93,7 +93,7 @@ API Endpoints
 
 Method	Endpoint	Description
 
-GET	/rewards	Get List of total reward points for each customer
+GET	/rewards	Get List of total reward points for each customer  (http://localhost:8080/rewards)
 
 ---
 Sample Transaction JSON
