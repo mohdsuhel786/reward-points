@@ -7,8 +7,10 @@ import java.time.LocalDate;
 import java.util.Map;
 import java.util.Objects;
 
+
 @Data
 @AllArgsConstructor
+//Reward Response class
 public class RewardResponse {
     private Long customerId;
 

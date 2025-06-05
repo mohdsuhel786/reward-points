@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//Reward Controller and endpoint "/rewards"
 @RestController
 @RequestMapping("/rewards")
 @RequiredArgsConstructor
@@ -19,6 +20,7 @@ public class RewardController {
         this.rewardService = rewardService;
     }
 
+    //get mapping for get List of rewards
     @GetMapping
     public List<RewardResponse> getRewards(){
         return rewardService.calculateRewards();

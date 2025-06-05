@@ -22,12 +22,15 @@ public class RewardService {
     public RewardService(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }
-
+    //calculate rewards
     public List<RewardResponse> calculateRewards(){
         LocalDate now = LocalDate.now();
         LocalDate threeMonthsAgo = now.minusMonths(3);
+
+        //fetch all transaction in the past 3 months
         List<Transaction> transactions = transactionRepository.findByTransactionDateBetween(threeMonthsAgo,now);
-        //Group by customer
+
+        //Group transactions by customer
         Map<Long, List<Transaction>> byCustomer = transactions.stream().collect(Collectors.groupingBy(Transaction::getCustomerId));
 
         List<RewardResponse> rewardResponses = new ArrayList<>();
@@ -52,6 +55,7 @@ public class RewardService {
         return  rewardResponses;
     }
 
+    //calculate points
     private int calculatePointS(double amount) {
 
         if(amount<50) return 0;
